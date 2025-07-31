@@ -63,4 +63,32 @@ SELECT * from customer LIMIT 3;
 SELECT * FROM customer;
 
 #Order by ASC for ascending and DESC for descending
-SELECT first_name FROM customer ORDER BY age DESC LIMIT 1;
+SELECT first_name FROM customer WHERE gender='M' ORDER BY age DESC LIMIT 1;
+
+
+SELECT COUNT(first_name) FROM customer;
+
+SELECT MAX(age) FROM customer;
+
+SELECT MIN(age) FROM customer;
+
+SELECT AVG(age) FROM customer;
+
+SELECT SUM(age) FROM customer;
+
+SELECT first_name, COUNT(ID) 
+FROM customer 
+GROUP BY first_name;
+
+SELECT first_name, COUNT(ID) AS frequency
+FROM customer 
+GROUP BY first_name
+HAVING min(age)<26; 
+
+
+# order of SELECT,FROM,WHERE,GROUP BY, HAVING, ORDER BY
+
+SELECT first_name
+FROM customer
+GROUP BY first_name, age
+HAVING age=(SELECT MAX(age) FROM customer);
