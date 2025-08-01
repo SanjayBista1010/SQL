@@ -65,6 +65,7 @@ SELECT * FROM customer;
 #Order by ASC for ascending and DESC for descending
 SELECT first_name FROM customer WHERE gender='M' ORDER BY age DESC LIMIT 1;
 
+#Aggegrate
 
 SELECT COUNT(first_name) FROM customer;
 
